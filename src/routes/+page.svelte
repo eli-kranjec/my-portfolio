@@ -1,2 +1,17 @@
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
+<svelte:head>
+    <title>Home Page</title>
+</svelte:head>
+
+<body>
+    <h1>
+        
+        <!--<nav class="home_page">
+            <a href="https://tardicoder.github.io/portfolio">Main Page</a>
+            <a href="https://tardicoder.github.io/portfolio/contact">Contact</a>
+            <a href="https://tardicoder.github.io/portfolio/projects">Projects</a>
+            <a href="https://github.com/TardiCoder"  target="_blank">Profile Page</a>
+        </nav> -->
+        Eli Kranjec</h1>
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Est sapiente quis reprehenderit, ullam odit praesentium qui ab unde consequatur autem pariatur. Omnis dolores tenetur quaerat nulla autem quis distinctio. Facere?</p>
+    <img src ="images/download.jpg" alt="Picture of me">
+</body>
