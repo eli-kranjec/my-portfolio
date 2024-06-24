@@ -1,6 +1,8 @@
       
     <script>
-        import { page } from '$app/stores';  
+        import { page } from '$app/stores';
+        import { onMount } from 'svelte';
+        var body;
         export let pages  = [
             {url: "./", title: "Home Page"},
             {url: "./projects", title: "Projects Page"},
@@ -8,12 +10,32 @@
             {url: "https://github.com/TardiCoder/", title: "Github Page"}
 
         ];
+        let colorScheme = "dark";
+        let root = globalThis?.document?.documentElement;
+        let localStorage = globalThis.localStorage ?? {};
 
 
         
+        root?.style.setProperty("color-scheme", colorScheme);
+
+        $: root?.style.setProperty("color-scheme", colorScheme);
+        $: localStorage.colorScheme = colorScheme;
+
+
+
+
 
     </script>
     <style>
+
+        .theme{
+
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            font-size: 80%;
+        }
+
         a:hover{
 
             background-color: color-mix(in oklch, pink, canvas 85%);
@@ -42,6 +64,7 @@
             margin-bottom: 50px;
             font-weight: bold;  
             max-width: 100%;
+            text-align: center;
 
         }
 
@@ -59,4 +82,5 @@
                 <a href = {p.url} class:current={ "." + $page.route.id === p.url }  target = { p.url.startsWith("http") ? "_blank" : null } > {p.title} </a>
             {/each}
     </nav>
+    <label> <select class='theme' bind:value={ colorScheme }> <option value = 'dark'>Dark Mode</option> <option value = 'light'>Light Mode</option> </select> </label>
     <slot></slot>

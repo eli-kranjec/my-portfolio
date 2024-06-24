@@ -27,7 +27,6 @@ p, img{
 html{
 
     
-    color-scheme: dark;
     
     
 
@@ -74,10 +73,3 @@ image{
 }
 
 
-.theme{
-
-    position: absolute;
-    top: 1rem;
-    right: 1rem;
-    font-size: 80%;
-}

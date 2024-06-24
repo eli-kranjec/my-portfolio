@@ -14,7 +14,8 @@ export let hLevel = 2;
 	<h1>{ data.title }</h1>
 {:else if hLevel === 2}
 	<h2>{ data.title }</h2>
-<!-- (and so on until 6) -->
+{:else if hLevel === 3}
+    <h3>{data.year}</h3>
 {/if}
 
 <svelte:element this={"h" + hLevel}>{ data.title }</svelte:element>
@@ -47,5 +48,10 @@ export let hLevel = 2;
         line-height: 1.1;
         text-wrap: balance;
     }
-    
+
+    h3{
+        font-family: Baskerville;
+        font-variant-numeric: oldstyle-nums;
+    }
+
 </style>
