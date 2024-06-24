@@ -16,37 +16,11 @@ p, img{
     max-width: 100ch;
 }
 
-a{
-
-    flex: 1;
-    text-decoration: none;
-    color: inherit;
-    text-align: center;
-    padding: 0.5em;
-    
-    border-bottom-width: 2px;
-    border-bottom-style: solid;
-    border-bottom-color: oklch(50% 10% 200 / 40%);
-    padding-bottom: 10px;
-    font-size: 2em;
-    
-}
-
-nav{
-
-    margin-bottom: 50px;
-    font-weight: bold;  
-    max-width: 100%;
-    
-}
 
 
 
-.current{
 
-    border-bottom-width: 6px;
-    
-}
+
 
 
 
@@ -60,12 +34,7 @@ html{
 }
 
 
-a:hover{
 
-    background-color: color-mix(in oklch, pink, canvas 85%);
-    border-bottom-color: darkmagenta;
-    border-bottom-width: 6px;
-}
 
 /*input{
     font: inherit;
@@ -97,38 +66,13 @@ image{
     max-width: 100%;
 }
 
-.projects{
 
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(15em, 1fr));
-}
-
-article{
-
-    grid-row: span 3;
-}
-
-h2{
-
-   margin: 0;
-   size: 400%;
-}
-
-h1, h2, h3, h4, h5, h6{
-
-    line-height: 1.1;
-    text-wrap: balance;
-}
 
 .navbar{
 
     font-size: 2em;
 }
 
-.contact_navbar{
-
-    font-size: 4em;
-}
 
 .theme{
 

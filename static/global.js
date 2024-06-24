@@ -2,10 +2,10 @@
 
 console.log("Test");
 
-function $$ (selector, context = document) {
-    return Array.from(context.querySelectorAll(selector));
-}
-let navLinks = $$("nav a");
+// function $$ (selector, context = document) {
+//     return Array.from(context.querySelectorAll(selector));
+// }
+// let navLinks = $$("nav a");
 
 
 
@@ -15,9 +15,9 @@ let navLinks = $$("nav a");
 // console.log(currentLink);
 
 let pages = [
-    {url: "", title :"Home"},
-    {url: "projects", title: "Projects"},
-    {url: "contact", title: "Contact"},
+    {url: "", title :"Home Page"},
+    {url: "projects", title: "Projects Page"},
+    {url: "contact", title: "Contact Me"},
     {url: "https://github.com/TardiCoder/", title: "Github Page"}
 ];
 
@@ -25,22 +25,24 @@ let nav = document.createElement("nav");
 document.body.prepend(nav);
 
 
-for (let p of pages) {
+function onPageLoad() { 
+    a.classList.remove("current");
+    for (let p of pages) {
     
-    let url = p.url;
-    let title = p.title;
-    let a = document.createElement("a");
-    a.href = url;
-    a.textContent = title;
-    nav.append(a);
-    if (a.host === location.host && a.pathname === location.pathname) {
-        a.classList.add("current");
-    } else if (a.pathname === location.pathname) {
-        a.target = "_blank";
-    
+        let url = p.url;
+        let title = p.title;
+        let a = document.createElement("a");
+        a.href = url;
+        a.textContent = title;
+        nav.append(a);
+        if (a.host === location.host && a.pathname === location.pathname) {
+            a.classList.add("current");
+            console.log("current page: " + a);
+        } else if (a.pathname === location.pathname) {
+            a.target = "_blank";
+        
+        }
     }
-
-
 }
 
 
@@ -63,6 +65,9 @@ select.addEventListener("input", function (event)  {
     localStorage.colorScheme = event.target.value;
     
 });
+
+document.addEventListener('DOMContentLoaded', onPageLoad);
+document.addEventListener('load', onPageLoad);
 
 
 

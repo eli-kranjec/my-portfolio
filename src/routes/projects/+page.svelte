@@ -4,25 +4,17 @@
     <pre>{ JSON.stringify(projects, null, "\t") }</pre>
 </svelte:head>
 <body>
-<h1>
-    <!--<div class="navbar">
-        <nav>
-                <a href="https://tardicoder.github.io/portfolio">Main Page</a>
-                <a href="https://tardicoder.github.io/portfolio/contact">Contact</a>
-                <a href="https://tardicoder.github.io/portfolio/projects">Projects</a>
-                <a href="https://github.com/TardiCoder"  target="_blank">Profile Page</a>  
-        </nav>
-     </div>
-    -->
+<h1> {projects.length} So Far</h1>
 
-    Projects Page
     <div class="projects">
-        <article>
-            <h2>Lorem ipsum dolor sit.</h2>
-            <img src="https://vis-society.github.io/labs/2/images/empty.svg" alt="">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam tempora velit commodi veritatis ullam, adipisci eveniet numquam eius! Maxime rerum iusto, tenetur eius cumque minima magnam quas cupiditate officia soluta!</p>
-        </article>
-        <article>
+        {#each projects as p}
+            <article>
+                <h2>{p.title}</h2>
+                <img src= {p.image} alt="">
+                <p>{p.description}</p>
+            </article>
+        {/each}
+        <!-- <article>
             <h2>Magni necessitatibus itaque animi.</h2>
             <img src="https://vis-society.github.io/labs/2/images/empty.svg" alt="">
             <p>A quas, modi expedita recusandae eaque dolores ullam facilis illum amet vel officiis dolorum. Alias praesentium sit non sint cumque iusto totam temporibus saepe iste magnam, officia quis! Delectus, quibusdam.</p>
@@ -76,7 +68,6 @@
             <h2>Tempora ex fugit repudiandae!</h2>
             <img src="https://vis-society.github.io/labs/2/images/empty.svg" alt="">
             <p>Saepe dignissimos a accusantium quaerat nobis in cum tenetur magni nemo provident impedit esse sapiente, deleniti sequi maiores culpa eos corporis sint quis exercitationem laboriosam quasi consectetur aperiam. Cupiditate, eligendi.</p>
-        </article>
+        </article> -->
     </div>
-</h1>
 </body>
