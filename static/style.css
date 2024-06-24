@@ -72,4 +72,31 @@ image{
     font-size: 2em;
 }
 
+.span{
+    aspect-ratio: 1 / 1;
+    background-color: grey;
+    border-radius: 50%;
+    
+}
+
+.legend{
+    grid-template-columns: repeat(auto-fill, minmax(9em, 1fr));
+    display:grid;
+    align-items: center;
+    gap: 2px;
+}
+
+li{
+    display:flex;
+    align-items: center;
+    gap: 2px;
+    color: var(--color);
+    
+}
+
+.container{
+    display:flex;
+    flex: 1;
+    align-items: horizontal;
+}
 

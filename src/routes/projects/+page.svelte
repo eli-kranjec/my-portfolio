@@ -1,11 +1,22 @@
-<script>import projects from '$lib/projects.json';</script>
+<script>
+    import projects from '$lib/projects.json';
+    import Pie from '$lib/Pie.svelte';
+    let pieData = [
+	{ value: 1, label: "apples" },
+	{ value: 2, label: "oranges" },
+	{ value: 3, label: "mangos" },
+	{ value: 4, label: "pears" },
+	{ value: 5, label: "limes" },
+	{ value: 5, label: "cherries" }
+    ];
+
+</script>
 <svelte:head>
     <title>Projects Page</title>
-    <pre>{ JSON.stringify(projects, null, "\t") }</pre>
 </svelte:head>
 <body>
 <h1> {projects.length} So Far</h1>
-
+    <Pie data={pieData} />
     <div class="projects">
         {#each projects as p}
             <article>
