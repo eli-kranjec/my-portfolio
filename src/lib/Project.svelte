@@ -23,12 +23,16 @@ export let hLevel = 2;
 
 <style>
 
-    .projects{
+    .project{
 
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(15em, 1fr));
+        width: 25%;
+        
     
     }
+
+
 
     article{
 

@@ -6,7 +6,9 @@
         export let pages  = [
             {url: "./", title: "Home Page"},
             {url: "./projects", title: "Projects Page"},
+            {url:"./resume", title: "Resume"},
             {url: "./contact", title: "Contact Me"},
+            {url: "./meta", title: "Meta"},
             {url: "https://github.com/TardiCoder/", title: "Github Page"}
 
         ];
