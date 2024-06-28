@@ -1,9 +1,10 @@
 [
     {
-        "title": "A project",
-        "year": "2020",
-        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
-        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam tempora velit commodi veritatis ullam, adipisci eveniet numquam eius! Maxime rerum iusto, tenetur eius cumque minima magnam quas cupiditate officia soluta!"
+        "title": "Bikewatcher",
+        "year": "2024",
+        "image": "/Users/psychstud/my-portfolio/static/images/bikew.png",
+        "description": "An interactive website that displays paths used by bikes and the departures from each station. The time can be changed to show total departures and proportion of depatures to arrivals at each station.",
+        "url": "https://github.com/TardiCoder/bikewatching"
     },
     {
         "title": "Project number 2.",
