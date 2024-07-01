@@ -7,6 +7,7 @@
   import { computePosition, autoPlacement, offset } from "@floating-ui/dom";
   import Scatterplot from "./Scatterplot.svelte";
   import FileLines from "./FileLines.svelte";
+  import Scrolly from "svelte-scrolly";
 
   let data = [];
   let commits = [];
@@ -90,7 +91,6 @@
         return ret;
       });
   });
-
   $: hasSelection = selectedCommits?.length > 0;
 
   $: selectedLines = (hasSelection ? selectedCommits : commits).flatMap(
@@ -141,14 +141,43 @@
   <dd>{d3.group(filteredLines, (d) => d.file).size}</dd>
 </dl>
 
-<label>
+<!-- <label>
   Show commits until:
   <input max="100" bind:value={commitProgress} type="range" />
   <time>{commitMaxTime?.toLocaleString("en")}</time>
-</label>
-<FileLines lines={filteredLines} />
-<p>{hasSelection ? selectedCommits?.length : "No"} commits selected</p>
-<Scatterplot commits={filteredCommits} bind:selectedCommits />
+</label> -->
+
+<Scrolly bind:progress={commitProgress} --scrolly-layout="viz-first">
+  {#each commits as commit, index}
+    <p>
+      On {commit.datetime.toLocaleString("en", {
+        dateStyle: "full",
+        timeStyle: "short",
+      })}, I made
+      <a href={commit.url} target="_blank"
+        >{index > 0
+          ? "another glorious commit"
+          : "my first commit, and it was glorious"}</a
+      >. I edited {commit.totalLines} lines across {d3.rollups(
+        commit.lines,
+        (D) => D.length,
+        (d) => d.file
+      ).length} files. Then I looked over all I had made, and I saw that it was very
+      good.
+    </p>
+  {/each}
+  <svelte:fragment slot="viz">
+    <FileLines lines={filteredLines} />
+    <p>{hasSelection ? selectedCommits?.length : "No"} commits selected</p>
+    <Scatterplot commits={filteredCommits} bind:selectedCommits />
+    {#key languageBreakdown}
+      <Pie data={transformArray(languageBreakdown)} />
+    {/key}
+  </svelte:fragment>
+</Scrolly>
+
+<Scrolly bind:progress={commitMaxTime} throttle="5" debounce="5"></Scrolly>
+
 <div class="container">
   {#each languageBreakdown as obj}
     <div class="langB">
@@ -160,10 +189,6 @@
     </div>
   {/each}
 </div>
-
-{#key languageBreakdown}
-  <Pie data={transformArray(languageBreakdown)} />
-{/key}
 
 <style>
   label {
@@ -203,5 +228,9 @@
 
   input {
     accent-color: blue;
+  }
+
+  :global(body) {
+    max-width: min(120ch, 80vw);
   }
 </style>
