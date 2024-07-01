@@ -93,7 +93,7 @@
   $: {
     if (svg) {
       d3.select(svg).call(d3.brush().on("start brush end", brushed));
-      // d3.select(svg).selectAll(".dots, .overlay ~ *").raise();
+      d3.select(svg).selectAll(".dots, .overlay ~ *").raise();
       console.log(d3.select(svg).selectAll(".dots ~ *"));
     }
   }
@@ -216,9 +216,5 @@
 
   .selected_commit {
     fill: red;
-  }
-
-  input {
-    accent-color: blue;
   }
 </style>

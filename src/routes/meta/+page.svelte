@@ -6,6 +6,7 @@
   import Pie from "$lib/Pie.svelte";
   import { computePosition, autoPlacement, offset } from "@floating-ui/dom";
   import Scatterplot from "./Scatterplot.svelte";
+  import FileLines from "./FileLines.svelte";
 
   let data = [];
   let commits = [];
@@ -145,6 +146,7 @@
   <input max="100" bind:value={commitProgress} type="range" />
   <time>{commitMaxTime?.toLocaleString("en")}</time>
 </label>
+<FileLines lines={filteredLines} />
 <p>{hasSelection ? selectedCommits?.length : "No"} commits selected</p>
 <Scatterplot commits={filteredCommits} bind:selectedCommits />
 <div class="container">

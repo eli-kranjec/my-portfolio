@@ -64,4 +64,8 @@
   .projects h2 {
     font-size: 100%;
   }
+  img {
+    width: 230px;
+    height: 150px;
+  }
 </style>
