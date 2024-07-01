@@ -2,7 +2,7 @@
     {
         "title": "Bikewatcher",
         "year": "2024",
-        "image": "/Users/psychstud/my-portfolio/static/images/bikew.png",
+        "image": "/Users/psychstud/my-portfolio/static/images/Bikewatcher.png",
         "description": "An interactive website that displays paths used by bikes and the departures from each station. The time can be changed to show total departures and proportion of depatures to arrivals at each station.",
         "url": "https://github.com/TardiCoder/bikewatching"
     },
