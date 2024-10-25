@@ -1,3 +1,3 @@
-## Eli Kranjec Website
+## Eli Kranjec Portfolio and Personal Website
 
-Currently in development, will be back up soon!
+Site is currently down and being worked on, will be back up soon!
